@@ -7,3 +7,4 @@ app.include_router(auth_router,prefix="/auth")
 @app.get("/")
 def welcome():
     return {"message": "Welcome to the chat!"}
+
