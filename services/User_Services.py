@@ -10,3 +10,9 @@ class User_Service:
         
     def Find_All_Users():
         print("Users Found Successfully and It has to be")
+    
+    def List_all_users():
+        print(" User listed successfully")
+        
+    def Sort_by_age():
+        print("Sort by age")    

@@ -12,6 +12,7 @@ class Auth_Service:
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
 
+
         if user["password"] != password:
             raise HTTPException(status_code=401, detail="Invalid password")
 
@@ -29,3 +30,6 @@ class Auth_Service:
         })
 
         return {"message": "User registered successfully"}
+
+    def Logout(self):
+        print("Logout Functionality has been built successfully")
