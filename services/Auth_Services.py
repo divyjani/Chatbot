@@ -29,7 +29,7 @@ class Auth_Service:
             "password": password
         })
 
-        return {"message": "User registered successfully"}
+        return {"message": "User registeredd successfully"}
 
     def Logout(self):
         print("Logout Functionality has been built successfully")
