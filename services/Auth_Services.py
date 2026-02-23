@@ -7,6 +7,10 @@ class Auth_Service:
         # self.password=password
         print("Constructor ")
     async def Login(self, email, password):
+        
+        if email in db["blacklisted"]:
+            raise HTTPException(status_code=404, detail="User id is blocked")
+        
         user = await db.users.find_one({"email": email})
 
         if not user:
@@ -32,4 +36,5 @@ class Auth_Service:
         return {"message": "User registeredd successfully"}
 
     def Logout(self):
+        
         print("Logout Functionality has been built successfully")
