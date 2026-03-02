@@ -8,6 +8,8 @@ class Auth_Service:
         print("Constructor ")
     async def Login(self, email, password):
         
+        
+        
         if email in db["blacklisted"]:
             raise HTTPException(status_code=404, detail="User id is blocked")
         

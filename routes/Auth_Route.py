@@ -24,3 +24,7 @@ async def register(data:RegisterSchema):
     res=await auth_service.Register(data.Fullname,data.email,data.password)
     print("Answerrrr",res)
     return {"data":f"User {data.Fullname} registered successfully"}     
+
+@router.get("/logout")
+def logout():
+    return {"data":"User logged out successfully"}
