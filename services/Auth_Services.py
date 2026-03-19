@@ -8,13 +8,11 @@ class Auth_Service:
         print("Constructor ")
     async def Login(self, email, password):
         
-        
-        
         if email in db["blacklisted"]:
             raise HTTPException(status_code=404, detail="User id is blocked")
         
         user = await db.users.find_one({"email": email})
-
+        
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
 
@@ -25,7 +23,9 @@ class Auth_Service:
         return user
 
     async def Register(self,fullname,email,password):
+        
         existing_user = await db.users.find_one({"email": email})
+        
         if existing_user:
             raise HTTPException(status_code=400, detail="User already exists")
 

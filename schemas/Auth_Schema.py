@@ -7,3 +7,5 @@ class LoginSchema(BaseModel):
 class RegisterSchema(LoginSchema):
     Fullname:str 
     
+class TokenSchema(BaseModel):
+    token:str
